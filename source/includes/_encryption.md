@@ -1,128 +1,128 @@
 # Encryption
 
-## Get Skykey
+## Get Pubkey
 
 ```shell
-curl -A "Sia-Agent"  -u "":<apipassword> --data "name=key_to_the_castle" "localhost:9980/skynet/skykey"
-curl -A "Sia-Agent"  -u "":<apipassword> --data "id=gi5z8cf5NWbcvPBaBn0DFQ==" "localhost:9980/skynet/skykey"
+curl -A "ScPrime-Agent"  -u "":<apipassword> --data "name=key_to_the_castle" "localhost:4280/pubaccess/pubkey"
+curl -A "ScPrime-Agent"  -u "":<apipassword> --data "id=gi5z8cf5NWbcvPBaBn0DFQ==" "localhost:4280/pubaccess/pubkey"
 ```
 
 > The above command returns JSON structured like this
 
 ```json
 {
-  "skykey": "BAAAAAAAAABrZXkxAAAAAAAAAAQgAAAAAAAAADiObVg49-0juJ8udAx4qMW-TEHgDxfjA0fjJSNBuJ4a"
+  "pubkey": "BAAAAAAAAABrZXkxAAAAAAAAAAQgAAAAAAAAADiObVg49-0juJ8udAx4qMW-TEHgDxfjA0fjJSNBuJ4a"
 }
 ```
 
 **UNSTABLE - subject to change in v1.4.9**
 
-This endpoint returns the base-64 encoded skykey stored under that name, or with
+This endpoint returns the base-64 encoded pubkey stored under that name, or with
 that ID.
 
 ### HTTP Request
-`GET /skynet/skykey/<name|id>`
+`GET /pubaccess/pubkey/<name|id>`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-name | name of the skykey being queried
-id | base-64 encoded ID of the skykey being queried
+name | name of the pubkey being queried
+id | base-64 encoded ID of the pubkey being queried
 
 ### Response Fields
 
 Field | Type | Description
 ----- | ---- | -----------
-skykey | string | base-64 encoded skykey
+pubkey | string | base-64 encoded pubkey
 
 
-## Get Skykey ID
+## Get Pubkey ID
 
 ```shell
-curl -A "Sia-Agent"  -u "":<apipassword> --data "name=key_to_the_castle" "localhost:9980/skynet/skykeyid"
+curl -A "ScPrime-Agent"  -u "":<apipassword> --data "name=key_to_the_castle" "localhost:4280/pubaccess/pubkeyid"
 ```
 
 > The above command returns JSON structured like this
 
 ```json
 {
-  "skykeyid": "gi5z8cf5NWbcvPBaBn0DFQ=="
+  "pubkeyid": "gi5z8cf5NWbcvPBaBn0DFQ=="
 }
 ```
 
 **UNSTABLE - subject to change in v1.4.9**
 
-This endpoint returns the base-64 encoded ID of the skykey stored under that
+This endpoint returns the base-64 encoded ID of the pubkey stored under that
 name.
 
 ### HTTP Request
-`GET /skynet/skykeyid/<name>`
+`GET /pubaccess/pubkeyid/<name>`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-name | name of the skykey being queried
+name | name of the pubkey being queried
 
 ### Response Fields
 
 Field | Type | Description
 ----- | ---- | -----------
-skykeyid | string | base-64 encoded skykey ID
+pubkeyid | string | base-64 encoded pubkey ID
 
 ## Create Skykey
 
 ```shell
-curl -A "Sia-Agent"  -u "":<apipassword> --data "name=key_to_the_castle" "localhost:9980/skynet/createskykey"
+curl -A "ScPrime-Agent"  -u "":<apipassword> --data "name=key_to_the_castle" "localhost:4280/pubaccess/createpubkey"
 ```
 
 > The above command returns JSON structured like this
 
 ```json
 {
-  "skykey": "BAAAAAAAAABrZXkxAAAAAAAAAAQgAAAAAAAAADiObVg49-0juJ8udAx4qMW-TEHgDxfjA0fjJSNBuJ4a"
+  "pubkey": "BAAAAAAAAABrZXkxAAAAAAAAAAQgAAAAAAAAADiObVg49-0juJ8udAx4qMW-TEHgDxfjA0fjJSNBuJ4a"
 }
 ```
 
 **UNSTABLE - subject to change in v1.4.9**
 
-This endpoint creates a skykey stored under the given name.
+This endpoint creates a pubkey stored under the given name.
 
 ### HTTP Request
-`POST /skynet/createskykey/<name>`
+`POST /pubaccess/createpubkey/<name>`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-name | desired name of the skykey
+name | desired name of the pubkey
 
 ### Response Fields
 
 Field | Type | Description
 ----- | ---- | -----------
-skykey | string | base-64 encoded skykey
+pubkey | string | base-64 encoded pubkey
 
-## Add Skykey
+## Add Pubkey
 
 ```shell
-curl -A "Sia-Agent"  -u "":<apipassword> --data "skykey=BAAAAAAAAABrZXkxAAAAAAAAAAQgAAAAAAAAADiObVg49-0juJ8udAx4qMW-TEHgDxfjA0fjJSNBuJ4a" "localhost:9980/skynet/addskykey"
+curl -A "ScPrime-Agent"  -u "":<apipassword> --data "pubkey=BAAAAAAAAABrZXkxAAAAAAAAAAQgAAAAAAAAADiObVg49-0juJ8udAx4qMW-TEHgDxfjA0fjJSNBuJ4a" "localhost:4280/pubaccess/addpubkey"
 ```
 
 **UNSTABLE - subject to change in v1.4.9**
 
-This endpoint stores the given skykey with the renter's skykey manager.
+This endpoint stores the given pubkey with the renter's skykey manager.
 
 ### HTTP Request
 
-`POST /skynet/addskykey/<skykey>`
+`POST /pubaccess/addpubkey/<pubkey>`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-skykey | base-64 encoded skykey
+pubkey | base-64 encoded pubkey
 
 ### Response
 
