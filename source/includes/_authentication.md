@@ -1,17 +1,17 @@
-
+ 
 # API Authentication
 
 ```shell
 // example POST curl call with Authentication
-curl -A "Sia-Agent" --user "":<apipassword> --data "amount=123&destination=abcd" "localhost:9980/wallet/siacoins"
+curl -A "ScPrime-Agent" --user "":<apipassword> --data "amount=123&destination=abcd" "localhost:4280/wallet/scprimecoins"
 ```
 
 API authentication is enabled by default, using a password stored in a flat
 file. The location of this file is:
 
- - Linux:   `$HOME/.sia/apipassword`
- - MacOS:   `$HOME/Library/Application Support/Sia/apipassword`
- - Windows: `%LOCALAPPDATA%\Sia\apipassword`
+ - Linux:   `$HOME/.scprime/apipassword`
+ - MacOS:   `$HOME/Library/Application Support/ScPrime/apipassword`
+ - Windows: `%LOCALAPPDATA%\ScPrime\apipassword`
 
 <aside class="notice">
 The file contains a trailing newline, which must be trimmed before use.
@@ -29,5 +29,5 @@ And for a curl call the following would be included
 
 Authentication can be disabled by passing the `--authenticate-api=false` flag to
 siad. You can change the password by modifying the password file, setting the
-`SIA_API_PASSWORD` environment variable, or passing the `--temp-password` flag
-to siad.
+`SCPRIME_API_PASSWORD` environment variable, or passing the `--temp-password` flag
+to spd.
