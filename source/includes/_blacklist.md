@@ -3,7 +3,7 @@
 ## Get Blacklist
 
 ```shell
-curl -A "Sia-Agent" "localhost:9980/skynet/blacklist"
+curl -A "ScPrime-Agent" "localhost:4280/pubaccess/blacklist"
 ```
 
 > The above command returns JSON structured like this
@@ -22,7 +22,7 @@ This endpoint returns the list of merkleroots that are blacklisted.
 
 ### HTTP Request
 
-`GET /skynet/blacklist`
+`GET /pubaccess/blacklist`
 
 ### Response Fields
 
@@ -33,19 +33,19 @@ blacklist | object | The blacklist is a list of merkle roots, which are hashes, 
 ## Edit Blacklist
 
 ```shell
-// add skylink
-curl -A "Sia-Agent" --user "":<apipassword> --data '{"add" : ["GAC38Gan6YHVpLl-bfefa7aY85fn4C0EEOt5KJ6SPmEy4g","GAC38Gan6YHVpLl-bfefa7aY85fn4C0EEOt5KJ6SPmEy4g","GAC38Gan6YHVpLl-bfefa7aY85fn4C0EEOt5KJ6SPmEy4g"]}' "localhost:9980/skynet/blacklist"
+// add publink
+curl -A "ScPrime-Agent" --user "":<apipassword> --data '{"add" : ["GAC38Gan6YHVpLl-bfefa7aY85fn4C0EEOt5KJ6SPmEy4g","GAC38Gan6YHVpLl-bfefa7aY85fn4C0EEOt5KJ6SPmEy4g","GAC38Gan6YHVpLl-bfefa7aY85fn4C0EEOt5KJ6SPmEy4g"]}' "localhost:4280/pubaccess/blacklist"
 
-// remove skylink
-curl -A "Sia-Agent" --user "":<apipassword> --data '{"remove" : ["GAC38Gan6YHVpLl-bfefa7aY85fn4C0EEOt5KJ6SPmEy4g","GAC38Gan6YHVpLl-bfefa7aY85fn4C0EEOt5KJ6SPmEy4g","GAC38Gan6YHVpLl-bfefa7aY85fn4C0EEOt5KJ6SPmEy4g"]}' "localhost:9980/skynet/blacklist"
+// remove publink
+curl -A "ScPrime-Agent" --user "":<apipassword> --data '{"remove" : ["GAC38Gan6YHVpLl-bfefa7aY85fn4C0EEOt5KJ6SPmEy4g","GAC38Gan6YHVpLl-bfefa7aY85fn4C0EEOt5KJ6SPmEy4g","GAC38Gan6YHVpLl-bfefa7aY85fn4C0EEOt5KJ6SPmEy4g"]}' "localhost:4280/pubaccess/blacklist"
 ```
 
-This endpoint allows to update the list of skylinks that should be blacklisted
-from Skynet. It can be used to both add and remove skylinks from the blacklist.
+This endpoint allows to update the list of publinks that should be blacklisted
+from Public Portals. It can be used to both add and remove publinks from the blacklist.
 
 ### HTTP Request
 
-`POST /skynet/blacklist`
+`POST /pubaccess/blacklist`
 
 ### Request Body Fields
 
@@ -53,8 +53,8 @@ from Skynet. It can be used to both add and remove skylinks from the blacklist.
 
 Field | Type | Description
 ----- | ---- | -----------
-add | array of strings | add is an array of skylinks that should be added to the blacklist.
-remove | array of strings | remove is an array of skylinks that should be removed from the blacklist.
+add | array of strings | add is an array of publinks that should be added to the blacklist.
+remove | array of strings | remove is an array of publinks that should be removed from the blacklist.
 
 
 ### Response Fields
