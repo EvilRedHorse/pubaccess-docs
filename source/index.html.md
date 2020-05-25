@@ -1,5 +1,5 @@
 ---
-title: Skynet Docs
+title: Public Portals Docs
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell
@@ -12,8 +12,8 @@ toc_footers:
   - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
 
 includes:
-  - skyfile
-  - skylink
+  - pubfile
+  - publink
   - encryption
   - blacklist
   - portals
@@ -26,7 +26,7 @@ search: true
 
 # Introduction
 
-Welcome to the Skynet SDK docs!
+Welcome to the Public Portals SDK docs!
 
 We have SDK support for several languages, you can view code examples in the
 dark area to the right. Switch to the programming language of your choice by
