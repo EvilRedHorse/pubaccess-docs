@@ -3,7 +3,7 @@
 ## Get Portals
 
 ```shell
-curl -A "Sia-Agent" "localhost:9980/skynet/portals"
+curl -A "ScPrime-Agent" "localhost:4280/pubaccess/portals"
 ```
 
 > The above command returns JSON structured like this
@@ -12,18 +12,18 @@ curl -A "Sia-Agent" "localhost:9980/skynet/portals"
 {
   "portals": [
     {
-      "address": "siasky.net:443",
+      "address": "scp.techandsupply.ca:443",
       "public":  true
     }
   ]
 }
 ```
 
-This endpoint returns the list of known Skynet portals.
+This endpoint returns the list of known Public Portals.
 
 ### HTTP Request
 
-`GET /skynet/portals`
+`GET /pubaccess/portals`
 
 ### Response Fields
 
@@ -36,18 +36,18 @@ public | bool | Indicates whether the portal can be accessed publicly or not.
 
 ```shell
 // add portal
-curl -A "Sia-Agent" --user "":<apipassword> --data '{"add" : [{"address":"siasky.net:443","public":true}]}' "localhost:9980/skynet/portals"
+curl -A "ScPrime-Agent" --user "":<apipassword> --data '{"add" : [{"address":"scp.techandsupply.ca:443","public":true}]}' "localhost:4280/pubaccess/portals"
 
 // remove portal
-curl -A "Sia-Agent" --user "":<apipassword> --data '{"remove" : ["siasky.net:443"]}' "localhost:9980/skynet/portals"
+curl -A "ScPrime-Agent" --user "":<apipassword> --data '{"remove" : ["scp.techandsupply.ca:443"]}' "localhost:4280/pubaccess/portals"
 ```
 
-This endpoint allows to update the list of known Skynet portals. It can be used
+This endpoint allows to update the list of known Public Portals. It can be used
 to both add and remove portals from the list.
 
 ### HTTP Request
 
-`POST /skynet/portals`
+`POST /pubaccess/portals`
 
 ### Request Body Fields
 
@@ -55,7 +55,7 @@ to both add and remove portals from the list.
 
 Field | Type | Description
 ----- | ---- | -----------
-add | array of SkynetPortal | add is an array of portal info that should be added to the list of portals.
+add | array of PubaccessPortal | add is an array of portal info that should be added to the list of portals.
 remove | array of strings | remove is an array of portal network addresses that should be removed from the
 list of portals.
 
